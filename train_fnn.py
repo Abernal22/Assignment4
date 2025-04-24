@@ -17,7 +17,7 @@ y_train_tensor = torch.FloatTensor(y_train).unsqueeze(1)
 y_test_tensor = torch.FloatTensor(y_test).unsqueeze(1)
 
 #train FNN
-model = FNN(input_size=10000, hidden_sizes=[512, 256])
+model = FNN(input_size=10000, hidden_sizes=[512, 256, 128])
 criterion = nn.BCELoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001, weight_decay=1e-5)
 
