@@ -94,6 +94,7 @@ for i in range(m):
     with torch.no_grad():
         pred = (model(X_test_tensor) > 0.5).float()
         accuracy = (pred == y_test_tensor).float().mean().item()
+        print(f"FNN bag model {i} Accuracy: {accuracy*100:.2f}%, Time: {end - start:.2f}s")
         preds.append(pred)
         accuracies.append(accuracy)
     models.append(model)
